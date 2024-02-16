@@ -803,14 +803,34 @@ queue.enqueue("braintumor", 3);
 console.log(queue);
 */
 
-const { SinglyLinkedList } = require("./Arrays/index.js");
+/*
+const { SinglyLinkedList } = require("./LinkedLists/index.js");
 
 const newInstance = new SinglyLinkedList();
 
 newInstance.push(1);
 newInstance.push(2);
 newInstance.push(10);
-newInstance.shift();
-newInstance.shift();
-newInstance.unshift(100);
-newInstance.traverse();
+newInstance.push(100);
+newInstance.push(10000);
+newInstance.push(1000);
+
+// newInstance.traverse();
+// newInstance.get(0);
+// newInstance.set(2, -1);
+// newInstance.traverse();
+
+// newInstance.traverse();
+
+// newInstance.remove(1);
+// newInstance.traverse();
+newInstance.reverse().traverse();
+*/
+const { DoublyLinkedList } = require("./DLL");
+const DLLInstance = new DoublyLinkedList();
+
+DLLInstance.push(10);
+DLLInstance.push(100);
+DLLInstance.push(1000);
+DLLInstance.pop();
+DLLInstance.traverse();
