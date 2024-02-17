@@ -833,4 +833,14 @@ DLLInstance.push(10);
 DLLInstance.push(100);
 DLLInstance.push(1000);
 DLLInstance.pop();
+
+console.log(DLLInstance.shift());
+console.log(DLLInstance.unshift(999));
+console.log(DLLInstance.unshift("fuck"));
+console.log(DLLInstance.unshift("hehe"));
+
+// console.log(DLLInstance.get(3));
+// DLLInstance.insert();
+DLLInstance.insert(2, 0);
+console.log(DLLInstance.remove(3));
 DLLInstance.traverse();
