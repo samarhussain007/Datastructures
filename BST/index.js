@@ -1,41 +1,74 @@
 class Node {
-  constructor(val) {
-    this.val = val;
-    this.next = null;
+  constructor(value) {
+    this.left = null;
+    this.right = null;
+    this.value = value;
   }
 }
 
-class Stack {
+class BinarySearchTree {
   constructor() {
-    this.first = null;
-    this.last = null;
-    this.size = 0;
+    this.root = null;
   }
-  push(val) {
-    var newNode = new Node(val);
-    if (!this.first) {
-      this.first = newNode;
-      this.last = newNode;
-    } else {
-      let temp = this.first;
-      this.first = newNode;
-      this.first.next = temp;
+  insert(value) {
+    const newNode = new Node(value);
+
+    if (!this.root) {
+      this.root = newNode;
+      return this;
     }
-    return ++this.size;
+
+    function helper(node) {
+      if (!node) {
+        return newNode;
+      }
+      const val = node.value;
+      if (newNode.value > val) {
+        node.right = helper(node.right);
+      } else {
+        node.left = helper(node.left);
+      }
+      return node;
+    }
+    helper(this.root);
+    return this;
   }
-  pop() {
-    if (!this.first) return null;
-    let removedNode = this.first;
-    if (this.size === 1) {
-      this.first = null;
-      this.last = null;
-    } else {
-      this.first = this.first.next;
-      removedNode.next = null;
+  // find(value) {
+  //   if (!this.root) return false;
+  //   const currentVal = this.root.value;
+
+  //   if (value === currentVal) {
+  //     return true;
+  //   }
+
+  //   function helper(node) {
+  //     if (!node) {
+  //       return false;
+  //     } else if (node.value === value) {
+  //       return true;
+  //     }
+
+  //     const val = node.value;
+  //     if (value > val) {
+  //       return helper(node.right);
+  //     } else {
+  //       return helper(node.left);
+  //     }
+  //   }
+
+  //   return helper(this.root);
+  // }
+  find(value) {
+    if (!this.root) return false;
+
+    function helper(node) {
+      if (!node) return false;
+      if (node.value === value) return true;
+      return value > node.value ? helper(node.right) : helper(node.left);
     }
-    --this.size;
-    return removedNode;
+
+    return helper(this.root);
   }
 }
 
-module.exports = { Stack };
+module.exports = { BinarySearchTree };

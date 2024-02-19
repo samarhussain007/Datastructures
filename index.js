@@ -862,6 +862,7 @@ console.log(stackInstance.pop());
 console.log(stackInstance.pop());
 */
 
+/*
 const { Queue } = require("./Queue");
 
 const QueueInstance = new Queue();
@@ -877,3 +878,19 @@ console.log(QueueInstance.dequeue());
 console.log(QueueInstance.dequeue());
 console.log(QueueInstance.dequeue());
 console.log(QueueInstance.dequeue());
+*/
+
+const { BinarySearchTree } = require("./BST");
+
+let bst = new BinarySearchTree();
+
+bst.insert(10);
+bst.insert(5);
+bst.insert(15);
+bst.insert(3);
+bst.insert(8);
+bst.insert(10);
+
+console.log(bst.find(5));
+
+// console.log(bst.root);
