@@ -826,6 +826,8 @@ newInstance.push(1000);
 // newInstance.traverse();
 newInstance.reverse().traverse();
 */
+
+/*
 const { DoublyLinkedList } = require("./DLL");
 const DLLInstance = new DoublyLinkedList();
 
@@ -844,3 +846,34 @@ console.log(DLLInstance.unshift("hehe"));
 DLLInstance.insert(2, 0);
 console.log(DLLInstance.remove(3));
 DLLInstance.traverse();
+*/
+/*
+const { Stack } = require("./Stack");
+
+const stackInstance = new Stack();
+
+stackInstance.push(10);
+stackInstance.push(1);
+stackInstance.push(1000);
+
+console.log(stackInstance.pop());
+console.log(stackInstance.pop());
+console.log(stackInstance.pop());
+console.log(stackInstance.pop());
+*/
+
+const { Queue } = require("./Queue");
+
+const QueueInstance = new Queue();
+
+console.log(QueueInstance.enqueue(1));
+console.log(QueueInstance.enqueue(2));
+console.log(QueueInstance.enqueue(3));
+console.log(QueueInstance.enqueue(4));
+
+console.log(QueueInstance.dequeue());
+console.log(QueueInstance.dequeue());
+console.log(QueueInstance.dequeue());
+console.log(QueueInstance.dequeue());
+console.log(QueueInstance.dequeue());
+console.log(QueueInstance.dequeue());
