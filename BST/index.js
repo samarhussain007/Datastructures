@@ -69,6 +69,75 @@ class BinarySearchTree {
 
     return helper(this.root);
   }
+  BFS() {
+    let Result = [];
+    let Queue = [];
+    let node = this.root;
+    Queue.push(node);
+
+    while (Queue.length > 0) {
+      let value = Queue.shift();
+      Result.push(value);
+      if (value.left) {
+        Queue.push(value.left);
+      }
+      if (value.right) {
+        Queue.push(value.right);
+      }
+    }
+    return Result;
+  }
+  DFSPRE() {
+    let Result = [];
+    let current = this.root;
+    function helper(node) {
+      Result.push(node);
+      if (node.left) {
+        helper(node.left);
+      }
+      if (node.right) {
+        helper(node.right);
+      }
+    }
+    helper(current);
+    const mappedData = Result.map((el) => el.value);
+    console.log(mappedData);
+    return Result;
+  }
+  DFSPOST() {
+    let Result = [];
+    let current = this.root;
+    function helper(node) {
+      if (node.left) {
+        helper(node.left);
+      }
+      if (node.right) {
+        helper(node.right);
+      }
+      Result.push(node);
+    }
+    helper(current);
+    const mappedData = Result.map((el) => el.value);
+    console.log(mappedData);
+    return Result;
+  }
+  DFSIN() {
+    let Result = [];
+    let current = this.root;
+    function helper(node) {
+      if (node.left) {
+        helper(node.left);
+      }
+      Result.push(node);
+      if (node.right) {
+        helper(node.right);
+      }
+    }
+    helper(current);
+    const mappedData = Result.map((el) => el.value);
+    console.log(mappedData);
+    return Result;
+  }
 }
 
 module.exports = { BinarySearchTree };

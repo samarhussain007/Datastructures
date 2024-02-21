@@ -880,17 +880,23 @@ console.log(QueueInstance.dequeue());
 console.log(QueueInstance.dequeue());
 */
 
+/*
 const { BinarySearchTree } = require("./BST");
 
 let bst = new BinarySearchTree();
 
 bst.insert(10);
-bst.insert(5);
+bst.insert(6);
 bst.insert(15);
 bst.insert(3);
 bst.insert(8);
-bst.insert(10);
-
-console.log(bst.find(5));
+bst.insert(20);
 
 // console.log(bst.root);
+bst.BFS();
+bst.DFSPRE();
+bst.DFSPOST();
+bst.DFSIN();
+
+// console.log(bst.root);
+*/
