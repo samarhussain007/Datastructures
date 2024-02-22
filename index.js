@@ -900,3 +900,16 @@ bst.DFSIN();
 
 // console.log(bst.root);
 */
+
+const { Heaps } = require("./HEAPS");
+
+const HeapInstance = new Heaps();
+
+console.log(HeapInstance.insert(10));
+console.log(HeapInstance.insert(100));
+console.log(HeapInstance.insert(1000));
+console.log(HeapInstance.insert(200));
+console.log(HeapInstance.insert(20));
+console.log(HeapInstance.insert(50));
+console.log(HeapInstance.insert(1));
+console.log(HeapInstance.insert(900));
