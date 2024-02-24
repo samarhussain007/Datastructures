@@ -901,6 +901,7 @@ bst.DFSIN();
 // console.log(bst.root);
 */
 
+/*
 const { Heaps } = require("./HEAPS");
 
 const HeapInstance = new Heaps();
@@ -913,3 +914,22 @@ console.log(HeapInstance.insert(20));
 console.log(HeapInstance.insert(50));
 console.log(HeapInstance.insert(1));
 console.log(HeapInstance.insert(900));
+
+console.log(HeapInstance.extractMax());
+console.log(HeapInstance.extractMax());
+console.log(HeapInstance.extractMax());
+console.log(HeapInstance.extractMax());
+console.log(HeapInstance.extractMax());
+console.log(HeapInstance.extractMax());
+console.log(HeapInstance.extractMax());
+console.log(HeapInstance.extractMax());
+*/
+
+const { PriorityQueue } = require("./PriorityQueue");
+
+const pqInstance = new PriorityQueue();
+
+console.log(pqInstance.enqueue("this is third", 3));
+console.log(pqInstance.enqueue("this is second", 2));
+console.log(pqInstance.enqueue("this is first", 1));
+console.log(pqInstance.dequeue());

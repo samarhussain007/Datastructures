@@ -1,9 +1,18 @@
-class Heaps {
+class Node {
+  constructor(value, priority) {
+    this.value = value;
+    this.priority = priority;
+  }
+}
+
+class PriorityQueue {
   constructor() {
     this.values = [];
   }
-  insert(val) {
-    this.values.push(val);
+  enqueue(val, priority) {
+    const newNode = new Node(val, priority);
+    this.values.push(newNode);
+
     this.BubbleUp();
 
     return this;
@@ -14,7 +23,7 @@ class Heaps {
 
     while (
       parentIndex >= 0 &&
-      this.values[childIndex] > this.values[parentIndex]
+      this.values[childIndex].priority < this.values[parentIndex].priority
     ) {
       [this.values[parentIndex], this.values[childIndex]] = [
         this.values[childIndex],
@@ -27,14 +36,14 @@ class Heaps {
 
     return this;
   }
-  extractMax() {
+  dequeue() {
     let arr = this.values;
     [arr[0], arr[arr.length - 1]] = [arr[arr.length - 1], arr[0]];
     const removed = arr.pop();
     if (this.values.length > 0) {
       this.sinkDown();
     }
-
+    console.log(this);
     return removed;
   }
 
@@ -52,15 +61,15 @@ class Heaps {
 
       if (leftChildIndex < length) {
         leftChild = this.values[leftChildIndex];
-        if (leftChild > element) {
+        if (leftChild.priority < element.priority) {
           swap = leftChildIndex;
         }
       }
       if (RightChildIndex < length) {
         rightChild = this.values[RightChildIndex];
         if (
-          (swap === null && rightChild > element) ||
-          (swap !== null && rightChild > leftChild)
+          (swap === null && rightChild.priority < element.priority) ||
+          (swap !== null && rightChild.priority < leftChild.priority)
         ) {
           swap = RightChildIndex;
         }
@@ -73,4 +82,4 @@ class Heaps {
   }
 }
 
-module.exports = { Heaps };
+module.exports = { PriorityQueue };
