@@ -925,6 +925,7 @@ console.log(HeapInstance.extractMax());
 console.log(HeapInstance.extractMax());
 */
 
+/*
 const { PriorityQueue } = require("./PriorityQueue");
 
 const pqInstance = new PriorityQueue();
@@ -933,3 +934,9 @@ console.log(pqInstance.enqueue("this is third", 3));
 console.log(pqInstance.enqueue("this is second", 2));
 console.log(pqInstance.enqueue("this is first", 1));
 console.log(pqInstance.dequeue());
+*/
+
+const { hashTable } = require("./hashTable");
+const hsInstance = new hashTable();
+
+console.log(hsInstance.hash("megenta", 10));
