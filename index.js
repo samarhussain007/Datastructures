@@ -939,4 +939,19 @@ console.log(pqInstance.dequeue());
 const { hashTable } = require("./hashTable");
 const hsInstance = new hashTable();
 
-console.log(hsInstance.hash("megenta", 10));
+hsInstance.set("A", "#444");
+hsInstance.set("B", "#000");
+hsInstance.set("AB", "#100");
+hsInstance.set("ABC", "#100");
+hsInstance.set("ABC", "#1000");
+"hello", hsInstance.get("A");
+"hello", hsInstance.get("B");
+console.log("hello1", hsInstance.keys());
+console.log("hello1", hsInstance.values());
+
+let obj = {
+  hello: 10,
+  key: 1000,
+  hello1: 1000,
+  hello1: 10001,
+};
