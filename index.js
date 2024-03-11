@@ -936,6 +936,7 @@ console.log(pqInstance.enqueue("this is first", 1));
 console.log(pqInstance.dequeue());
 */
 
+/*
 const { hashTable } = require("./hashTable");
 const hsInstance = new hashTable();
 
@@ -948,10 +949,26 @@ hsInstance.set("ABC", "#1000");
 "hello", hsInstance.get("B");
 console.log("hello1", hsInstance.keys());
 console.log("hello1", hsInstance.values());
+*/
 
-let obj = {
-  hello: 10,
-  key: 1000,
-  hello1: 1000,
-  hello1: 10001,
-};
+const { Graph } = require("./Graph");
+
+const graphInstance = new Graph();
+
+console.log(graphInstance.addVertex("A"));
+console.log(graphInstance.addVertex("B"));
+console.log(graphInstance.addVertex("C"));
+console.log(graphInstance.addVertex("D"));
+console.log(graphInstance.addVertex("E"));
+console.log(graphInstance.addVertex("F"));
+console.log(graphInstance.addEdge("A", "B"));
+console.log(graphInstance.addEdge("A", "C"));
+console.log(graphInstance.addEdge("B", "D"));
+console.log(graphInstance.addEdge("C", "E"));
+console.log(graphInstance.addEdge("D", "E"));
+console.log(graphInstance.addEdge("D", "F"));
+console.log(graphInstance.addEdge("E", "F"));
+// console.log(graphInstance.removeEdge("Tokyo", "Dallas"));
+// console.log(graphInstance.removeVertex("Chennai"));
+
+console.log(graphInstance.dephtFirstRecursive("A"));
